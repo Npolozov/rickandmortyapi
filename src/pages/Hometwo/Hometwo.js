@@ -2,34 +2,34 @@ import { ListItem } from 'components/ListItem/ListItem';
 import { SearchInput } from 'components/SearchInput/SearchInput';
 import { getMovies } from 'helpers/api';
 import { useEffect, useState } from 'react';
-import { List } from './Home.styled';
+import { useSearchParams } from 'react-router-dom';
+import { List } from './HomeTwo.styled';
 
-export const Home = () => {
+export const HomeTwo = () => {
   const [person, setPerson] = useState([]);
-  const [search, setSearch] = useState('');
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const searchQuery = searchParams.get('query') ?? '';
+  //   const [search, setSearch] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get('name') ?? '';
 
   const onSearch = value => {
-    setSearch(value);
+    setSearchParams(value !== '' ? { name: value } : {});
   };
 
   useEffect(() => {
     async function getPerson() {
       try {
-        const { results } = await getMovies(search);
+        const { results } = await getMovies(searchQuery);
         setPerson(results);
-        // setSearchParams(value !== '' ? { query: value } : {});
       } catch (error) {
         console.log(error.message);
       }
     }
     getPerson();
-  }, [search]);
+  }, [searchQuery]);
 
   return (
     <>
-      <SearchInput onSearch={onSearch} value={search} />
+      <SearchInput onSearch={onSearch} value={searchQuery} />
       {person && (
         <List>
           {person.map(({ name, image, id, species }) => (

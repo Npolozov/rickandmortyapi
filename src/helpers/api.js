@@ -2,10 +2,11 @@ import axios from 'axios';
 
 export const getMovies = async (query, page) => {
   const { data } = await axios.get(
-    `https://rickandmortyapi.com/api/character/?name=${query}`,
+    `https://rickandmortyapi.com/api/character/`,
     {
       params: {
         page: `${page}`,
+        name: `${query}`,
       },
     }
   );
