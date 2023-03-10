@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 export const SearchInput = ({ onSearch, value }) => {
   const [query, setQuery] = useState('');
-  console.log(query);
 
   const hundleSearch = event => {
     setQuery(event.currentTarget.value);
