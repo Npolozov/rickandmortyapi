@@ -10,10 +10,6 @@ export const Home = () => {
   // const [searchParams, setSearchParams] = useSearchParams();
   // const searchQuery = searchParams.get('query') ?? '';
 
-  const onSearch = value => {
-    setSearch(value);
-  };
-
   useEffect(() => {
     async function getPerson() {
       try {
@@ -27,10 +23,14 @@ export const Home = () => {
     getPerson();
   }, [search]);
 
+  const onSearch = value => {
+    setSearch(value);
+  };
+
   return (
     <>
       <SearchInput onSearch={onSearch} value={search} />
-      {person && (
+      {person?.length > 0 && (
         <List>
           {person.map(({ name, image, id, species }) => (
             <ListItem key={id} name={name} image={image} species={species} />
