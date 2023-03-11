@@ -5,9 +5,10 @@ export const SearchInput = ({ onSearch, value }) => {
   const [query, setQuery] = useState('');
 
   const hundleSearch = event => {
-    setQuery(event.currentTarget.value);
-    onSearch(query);
+    setQuery(event.target.value);
   };
+
+  onSearch(query);
 
   return (
     <InputSection>
