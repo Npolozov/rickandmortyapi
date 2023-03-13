@@ -1,14 +1,9 @@
 import { InputSection, Input } from './SearchInput.styled';
-import { useState } from 'react';
 
-export const SearchInput = ({ onSearch, value }) => {
-  const [query, setQuery] = useState('');
-
+export const SearchInput = ({ setSearch, value }) => {
   const hundleSearch = event => {
-    setQuery(event.target.value);
+    setSearch(event.target.value !== '' ? { name: event.target.value } : {});
   };
-
-  onSearch(query);
 
   return (
     <InputSection>

@@ -11,7 +11,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: lightgray;
     max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
@@ -35,7 +34,7 @@ p {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 

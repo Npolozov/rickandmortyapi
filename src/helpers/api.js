@@ -13,3 +13,12 @@ export const getMovies = async (query, page) => {
   console.log(data);
   return data;
 };
+
+export const getPersonById = async id => {
+  const { data } = await axios.get(
+    `https://rickandmortyapi.com/api/character/${id}`
+  );
+  console.log(data);
+  return data;
+};
+

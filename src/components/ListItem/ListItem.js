@@ -1,13 +1,18 @@
-import { Item, Info } from './ListItem.styled';
+import { useLocation } from 'react-router-dom';
+import { Item, Info, Link, Title, Paragraf } from './ListItem.styled';
 
-export const ListItem = ({ name, image, species }) => {
+export const ListItem = ({ id, name, image, species }) => {
+  const location = useLocation();
+
   return (
-    <Item>
-      <img src={image} alt={name} />
-      <Info>
-        <p>{name}</p>
-        <p>{species}</p>
-      </Info>
-    </Item>
+    <Link to={`/${id}`} state={{ from: location }}>
+      <Item>
+        <img src={image} alt={name} />
+        <Info>
+          <Title>{name}</Title>
+          <Paragraf>{species}</Paragraf>
+        </Info>
+      </Item>
+    </Link>
   );
 };

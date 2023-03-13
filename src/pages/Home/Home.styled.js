@@ -10,3 +10,7 @@ export const List = styled.ul`
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;
+
+export const ButtonSection = styled.div`
+  padding: 30px;
+`;

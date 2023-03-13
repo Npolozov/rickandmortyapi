@@ -8,14 +8,17 @@ export const Input = styled.input`
   display: inline-block;
   margin: 0 auto;
   width: 100%;
-  font: inherit;
   font-size: 20px;
-  border: 1px;
+  border-radius: 4px;
   outline: none;
   padding: 10px 10px;
 
+  &:hover,
+  &:focus {
+    background: #e5e5e5;
+  }
+
   &::placeholder {
-    font: inherit;
     font-size: 18px;
   }
 `;
