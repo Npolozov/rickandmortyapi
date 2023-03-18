@@ -12,6 +12,7 @@ import {
   Paragraf,
   NavigationLink,
   ImgConteiner,
+  ParagrafStatus,
 } from './Person.style';
 
 export const Person = () => {
@@ -58,7 +59,7 @@ export const Person = () => {
             </Item>
             <Item>
               <Title>Status</Title>
-              <Paragraf>{status}</Paragraf>
+              <ParagrafStatus status={status}>{status}</ParagrafStatus>
             </Item>
             <Item>
               <Title>Species</Title>

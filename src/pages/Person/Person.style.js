@@ -100,3 +100,16 @@ export const NavigationLink = styled(NavLink)`
   font-weight: 500;
   margin-bottom: 10px;
 `;
+
+export const ParagrafStatus = styled.p`
+  color: ${props => {
+    switch (String(props.status)) {
+      case 'Alive':
+        return 'green';
+      case 'Dead':
+        return 'red';
+      default:
+        return 'black';
+    }
+  }};
+`;
