@@ -19,6 +19,10 @@ export const ImgConteiner = styled.div`
 export const ListSection = styled.div`
   width: 400px;
   margin-top: 40px;
+
+  @media screen and (max-width: 448px) {
+    width: 300px;
+  }
 `;
 
 export const Img = styled.img`

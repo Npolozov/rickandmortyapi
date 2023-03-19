@@ -9,6 +9,10 @@ export const List = styled.ul`
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  @media screen and (max-width: 440px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const ButtonSection = styled.div`
